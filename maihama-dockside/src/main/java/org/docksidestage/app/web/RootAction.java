@@ -16,7 +16,7 @@
 package org.docksidestage.app.web;
 
 import org.docksidestage.app.web.base.DocksideBaseAction;
-import org.docksidestage.app.web.mypage.MypageAction;
+import org.docksidestage.app.web.healthcheck.HealthcheckAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
 import org.lastaflute.web.response.HtmlResponse;
@@ -29,6 +29,6 @@ public class RootAction extends DocksideBaseAction {
 
     @Execute
     public HtmlResponse index() {
-        return redirect(MypageAction.class);
+        return forward(HealthcheckAction.class);
     }
 }
