@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 import org.dbflute.optional.OptionalEntity;
 import org.dbflute.optional.OptionalThing;
-import org.docksidestage.app.web.signin.SigninAction;
+import org.docksidestage.app.web.healthcheck.HealthcheckAction;
 import org.docksidestage.dbflute.cbean.MemberCB;
 import org.docksidestage.dbflute.exbhv.MemberBhv;
 import org.docksidestage.dbflute.exbhv.MemberLoginBhv;
@@ -125,6 +125,6 @@ public class DocksideLoginAssist extends MaihamaLoginAssist<DocksideUserBean, Me
 
     @Override
     protected Class<?> getLoginActionType() {
-        return SigninAction.class;
+        return HealthcheckAction.class;
     }
 }
