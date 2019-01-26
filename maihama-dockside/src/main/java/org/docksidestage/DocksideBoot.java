@@ -9,7 +9,7 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
  * either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
@@ -23,7 +23,7 @@ import org.dbflute.tomcat.TomcatBoot;
 public class DocksideBoot { // #change_it_first
 
     public static void main(String[] args) { // e.g. java -Dlasta.env=production -jar maihama-dockside.war
-        new TomcatBoot(8091, "/dockside").asDevelopment(isDevelopment()).bootAwait();
+        new TomcatBoot(8091, "/api/dockside").asDevelopment(isDevelopment()).bootAwait();
     }
 
     private static boolean isDevelopment() {
