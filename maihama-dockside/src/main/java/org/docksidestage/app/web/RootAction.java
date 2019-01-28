@@ -16,19 +16,19 @@
 package org.docksidestage.app.web;
 
 import org.docksidestage.app.web.base.DocksideBaseAction;
-import org.docksidestage.app.web.healthcheck.HealthcheckAction;
 import org.lastaflute.web.Execute;
 import org.lastaflute.web.login.AllowAnyoneAccess;
-import org.lastaflute.web.response.HtmlResponse;
+import org.lastaflute.web.response.JsonResponse;
 
 /**
  * @author jflute
+ * @author cabos
  */
 @AllowAnyoneAccess
 public class RootAction extends DocksideBaseAction {
 
     @Execute
-    public HtmlResponse index() {
-        return forward(HealthcheckAction.class);
+    public JsonResponse index() {
+        return JsonResponse.asEmptyBody();
     }
 }
