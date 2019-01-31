@@ -15,6 +15,8 @@
  */
 package org.docksidestage.mylasta;
 
+import org.docksidestage.DocksideBoot;
+import org.docksidestage.app.web.SwaggerAction;
 import org.docksidestage.unit.UnitDocksideTestCase;
 
 /**
@@ -22,7 +24,16 @@ import org.docksidestage.unit.UnitDocksideTestCase;
  */
 public class DocksideLastaDocTest extends UnitDocksideTestCase {
 
+    @Override
+    protected String prepareMockContextPath() {
+        return DocksideBoot.CONTEXT; // basically for swagger
+    }
+
     public void test_document() throws Exception {
         saveLastaDocMeta();
+    }
+
+    public void test_swaggerJson() throws Exception {
+        saveSwaggerMeta(new SwaggerAction());
     }
 }

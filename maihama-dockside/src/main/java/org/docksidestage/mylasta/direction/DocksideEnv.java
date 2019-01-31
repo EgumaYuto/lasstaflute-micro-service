@@ -29,6 +29,9 @@ public interface DocksideEnv extends MaihamaConfig {
     /** The key of the configuration. e.g. localhost:8091 */
     String SERVER_DOMAIN = "server.domain";
 
+    /** The key of the configuration. e.g. true */
+    String SWAGGER_ENABLED = "swagger.enabled";
+
     /**
      * Get the value of property as {@link String}.
      * @param propertyKey The key of the property. (NotNull)
@@ -62,6 +65,20 @@ public interface DocksideEnv extends MaihamaConfig {
     String getServerDomain();
 
     /**
+     * Get the value for the key 'swagger.enabled'. <br>
+     * The value is, e.g. true <br>
+     * @return The value of found property. (NotNull: if not found, exception but basically no way)
+     */
+    String getSwaggerEnabled();
+
+    /**
+     * Is the property for the key 'swagger.enabled' true? <br>
+     * The value is, e.g. true <br>
+     * @return The determination, true or false. (if not found, exception but basically no way)
+     */
+    boolean isSwaggerEnabled();
+
+    /**
      * The simple implementation for configuration.
      * @author FreeGen
      */
@@ -76,6 +93,14 @@ public interface DocksideEnv extends MaihamaConfig {
 
         public String getServerDomain() {
             return get(DocksideEnv.SERVER_DOMAIN);
+        }
+
+        public String getSwaggerEnabled() {
+            return get(DocksideEnv.SWAGGER_ENABLED);
+        }
+
+        public boolean isSwaggerEnabled() {
+            return is(DocksideEnv.SWAGGER_ENABLED);
         }
     }
 }
